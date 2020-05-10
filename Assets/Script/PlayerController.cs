@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 
@@ -30,6 +31,11 @@ public class PlayerController : MonoBehaviour
     private float horizontalInput = 0;
     private bool isJumpPressed = false;
 
+    public void LoadNextLevel(int x)
+    {
+        SceneManager.LoadScene(x);
+
+    }
 
     void Start()
     {
