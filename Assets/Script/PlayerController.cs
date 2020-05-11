@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+
 
 
 
@@ -31,11 +31,7 @@ public class PlayerController : MonoBehaviour
     private float horizontalInput = 0;
     private bool isJumpPressed = false;
 
-    public void LoadNextLevel(int x)
-    {
-        SceneManager.LoadScene(x);
-
-    }
+    
 
     void Start()
     {
@@ -75,7 +71,7 @@ public class PlayerController : MonoBehaviour
         isOnGround = numHits > 0;
         Vector2 rayStart = new Vector2(collider.bounds.center.x, collider.bounds.min.y);
         Vector2 rayDirection = Vector2.down * groundDistanceCheck;
-        Debug.DrawRay(rayStart, rayDirection, Color.red, 1f);
+        //Debug.DrawRay(rayStart, rayDirection, Color.red, 1f);
 
 
         

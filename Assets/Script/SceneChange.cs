@@ -6,30 +6,13 @@ using UnityEngine.SceneManagement;
 public class SceneChange : MonoBehaviour
 {
 
-    PlayerController pc;
+    [SerializeField] private string nextSceneName;
 
-    void onTriggerEnter2D(Collider2D Collider)
+
+    private void onTriggerEnter2D(Collider2D collision)
     {
-
-
-        Scene sceneCurrent = SceneManager.GetActiveScene();
-
-        string sceneName = sceneCurrent.name;
-
-        if (sceneName == "World 1")
-        {
-            SceneManager.LoadScene("World 2");
-        }
-
-        else if (sceneName == "World 2")
-        {
-            SceneManager.LoadScene("World 3");
-        }
-        else if (sceneName == "World 3")
-        {
-            SceneManager.LoadScene("Menu");
-            Cursor.lockState = CursorLockMode.None;
-        }
-
+        SceneManager.LoadScene(nextSceneName);
+        Debug.Log("Working");
+        
     }
 }
