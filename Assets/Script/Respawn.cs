@@ -10,7 +10,7 @@ public class Respawn : MonoBehaviour
     void FixedUpdate()
     {
         if (transform.position.y < threshold)
-            transform.position = new Vector3(-10, -1, 0);
+            transform.position = transform.position = GameObject.FindWithTag("Respawn").transform.position;
     }
 }
 
